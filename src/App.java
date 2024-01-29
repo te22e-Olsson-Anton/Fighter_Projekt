@@ -157,7 +157,23 @@ public class App
                     }
 
                     System.out.println("Fiendens tur att slå");
-                    
+                    int randomNumberFight2 = random.nextInt(10);
+
+                    if(randomNumberFight2 >5)
+                    {
+
+                        System.out.println("Fienden lyckades slå dig");
+                        int randomNumberDamage2 = random.nextInt(15);
+
+                        playerHP -= randomNumberDamage2;
+
+                        System.out.println("Fienden slog dig med " +randomNumberDamage2+ " skada");
+                        System.out.println("Du har nu " +playerHP+ "liv kvar och fienden har nu" +enemeyHP+ "liv");
+                    }
+                    else
+                    {
+                        System.out.println("Fienden missade sitt slag");
+                    }
 
                     
 
