@@ -130,11 +130,11 @@ public class App
            while (enemy) 
            {
                 System.out.println("Din tur att slå");
-                System.out.println("Tryck ENTER för att slå");
+                System.out.println("Tryck space för att slå");
 
                 String fight = tb.nextLine();
 
-                if(tb.hasNextLine())
+                if(fight.equals(" "))
                 {
                     int randomNumberFight1 = random.nextInt(10);
                     
@@ -147,13 +147,17 @@ public class App
 
                         enemeyHP -= randomNumberDamage1;
 
-                        System.out.println("Du slog fienden med " +randomNumberDamage1+ "skada");
+                        System.out.println("Du slog fienden med " +randomNumberDamage1+ " skada");
+                        System.out.println("Fienden har nu " +enemeyHP+ " liv och du har nu" +playerHP+ " liv");
                     }
                     else
                     {
                         System.out.println("Du missade ditt slag!");
                         Thread.sleep(5000);
                     }
+
+                    System.out.println("Fiendens tur att slå");
+                    
 
                     
 
