@@ -130,6 +130,7 @@ public class App {
                         } else 
                         {
                             System.out.println("Du missade ditt slag!");
+                            Thread.sleep(1000);
                             
                         }
 
@@ -147,11 +148,12 @@ public class App {
 
                             System.out.println("Fienden slog dig med " + randomNumberDamage2 + " skada");
                             Thread.sleep(2000);
-                            System.out.println("Du har nu " + playerHP + "liv kvar och fienden har nu" + enemeyHP + "liv");
+                            System.out.println("Du har nu " + playerHP + " liv kvar och fienden har nu " + enemeyHP + " liv");
                             Thread.sleep(2000);
                         } else 
                         {
                             System.out.println("Fienden missade sitt slag");
+                            Thread.sleep(1000);
                         }
 
                         if (playerHP <= 0) 
@@ -174,5 +176,3 @@ public class App {
 
     }
 }
-
-
