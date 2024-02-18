@@ -12,23 +12,21 @@ public class App {
         int playerHP = 50;
         int enemeyHP = 50;
 
-        Scanner tb = new Scanner(System.in);
+        Scanner keyboard = new Scanner(System.in);
         Random random = new Random();
 
+        
         System.out.println("---------------------------");
         System.out.println("1. För att starta spelet");
-        System.out.println("2. Regler");
+        System.out.println("Målet är att hitta och döda fienden");
         System.out.println("---------------------------");
 
-        String start = tb.nextLine();
+        String start = keyboard.nextLine();
 
-        if (start.equalsIgnoreCase("1")) {
+        if (start.equalsIgnoreCase("1")) 
+        {
             gameStart = true;
-        } else if (start.equalsIgnoreCase("2")) {
-
         }
-        
-
         String[][] map = new String[5][5];
 
         int playerRow = 2;
@@ -73,7 +71,7 @@ public class App {
             System.out.println("Tryck på S för att röra dig åt höger");
             System.out.println("Tryck på D för att röra dig åt vänster");
 
-            String input = tb.nextLine();
+            String input = keyboard.nextLine();
 
             if (input.equalsIgnoreCase("W")) {
                 playerRow--;
@@ -108,8 +106,8 @@ public class App {
                     System.out.println("Din tur att slå");
                     System.out.println("Tryck space för att slå");
 
-                    String fight = tb.nextLine();
-
+                    String fight = keyboard.nextLine();
+                    
                     if (fight.equals(" ")) {
                         int randomNumberFight1 = random.nextInt(15);
 
@@ -125,7 +123,7 @@ public class App {
 
                             System.out.println("Du slog fienden med " + randomNumberDamage1 + " skada");
                             Thread.sleep(2000);
-                            System.out.println("Fienden har nu " + enemeyHP + " liv och du har nu" + playerHP + " liv");
+                            System.out.println("Fienden har nu " + enemeyHP + " liv och du har nu " + playerHP + " liv");
                             Thread.sleep(2000);
                         } else 
                         {
@@ -160,11 +158,17 @@ public class App {
                         {
                             System.out.println("du har förlorat");
                             enemy = false;
+                            playerHP = 50;
+                            enemeyHP = 50;
+                            playerRow = 2;
+                            playerCol = 2;
                         }
                         if (enemeyHP <= 0) 
                         {
                             System.out.println("Du vann");
                             enemy = false;
+                            playerRow = 2;
+                            playerCol = 2;
                         }
 
                     }
